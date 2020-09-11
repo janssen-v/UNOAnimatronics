@@ -56,7 +56,7 @@ void setup() {
 // Function to check if it is time to flip state
 bool isTime(float CHANNEL_TIME, float CHALLENGE_TIME) { // Challenge Time is either Push or Pull
   float CURRENT_TIME = milis()
-  if ((CURRENT_TIME - CHANNEL_TIME) == CHALLENGE_TIME){
+  if ((CURRENT_TIME - CHANNEL_TIME) >= CHALLENGE_TIME){
     CHANNEL_TIME = CURRENT_TIME
     return true
   }
