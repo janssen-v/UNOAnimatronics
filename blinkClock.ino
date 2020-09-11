@@ -54,11 +54,23 @@ void setup() {
   pinMode(RELAY_CHANNEL_8, OUTPUT);
 }
 
+// Function to update Channel time
+void updateTime(float CHANNEL_TIME) {
+  if (CHANNEL_TIME == CHANNEL_TIME_1) {CHANNEL_TIME_1 = millis();}
+  else if (CHANNEL_TIME == CHANNEL_TIME_2) {CHANNEL_TIME_2 = millis();}
+  else if (CHANNEL_TIME == CHANNEL_TIME_3) {CHANNEL_TIME_3 = millis();}
+  else if (CHANNEL_TIME == CHANNEL_TIME_4) {CHANNEL_TIME_4 = millis();}
+  else if (CHANNEL_TIME == CHANNEL_TIME_5) {CHANNEL_TIME_5 = millis();}
+  else if (CHANNEL_TIME == CHANNEL_TIME_6) {CHANNEL_TIME_6 = millis();}
+  else if (CHANNEL_TIME == CHANNEL_TIME_7) {CHANNEL_TIME_7 = millis();}
+  else if (CHANNEL_TIME == CHANNEL_TIME_8) {CHANNEL_TIME_8 = millis();}
+}
+
 // Function to check if it is time to flip state
 bool isTime(float CHANNEL_TIME, float CHALLENGE_TIME) { // Challenge Time is either Push or Pull
   float CURRENT_TIME = millis();
   if ((CURRENT_TIME - CHANNEL_TIME) >= CHALLENGE_TIME) {
-    CHANNEL_TIME = CURRENT_TIME;
+    updateTime(CHANNEL_TIME);
     return true;
   }
   else return false;
