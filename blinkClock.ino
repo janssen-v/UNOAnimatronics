@@ -1,5 +1,5 @@
 // Clock Timing Module for UNOAnimatronics Project
-const int RATE_CONSTANT = 100;
+const int RATE_CONSTANT = 10;
 
 // Configuring constants to denote relay channels
 const int RELAY_CHANNEL_1 = 1;
